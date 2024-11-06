@@ -1,0 +1,14 @@
+# Ignorer les dossiers de la bibliothèque Unity et les fichiers de build
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+
+# Ignorer les fichiers du système de configuration local
+[Dd]ebug.log
+*.swp
+
+# Ignorer les fichiers utilisateur
+[Uu]serSettings/
