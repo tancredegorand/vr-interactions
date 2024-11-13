@@ -12,3 +12,5 @@
 
 # Ignorer les fichiers utilisateur
 [Uu]serSettings/
+
+.DS_Store
