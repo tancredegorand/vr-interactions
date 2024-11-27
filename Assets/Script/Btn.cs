@@ -5,46 +5,33 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Btn : MonoBehaviour
 {
-    // Composant XR Grab Interactable pour détecter la sélection
-    private XRBaseInteractable interactable;
+    private XRSimpleInteractable interactable;
+    private Vector3 newPosition = new Vector3(71.22f, 22.88f, 42.85f);
+    private Vector3 originalPosition = new Vector3(71.22f, 22.89f, 42.85f);
 
-    void Awake()
+    void Start()
     {
-        // Récupère le composant XRBaseInteractable sur cet objet
-        interactable = GetComponent<XRBaseInteractable>();
-
-        if (interactable == null)
-        {
-            Debug.LogError("XRBaseInteractable est manquant sur cet objet. Ajoutez XR Grab Interactable ou un autre interactable.");
-            return;
-        }
-
-        // Abonne les fonctions aux événements
-        interactable.selectEntered.AddListener(OnSelectEntered);
+        interactable = GetComponent<XRSimpleInteractable>();
+        
+        // Ajoute des écouteurs pour les événements selectEntered et selectExited
+        interactable.selectEntered.AddListener(OnSelect);
+        interactable.selectExited.AddListener(OnDeselect);
     }
 
-    private void OnDestroy()
+    private void OnSelect(SelectEnterEventArgs args)
     {
-        // Désabonne pour éviter des fuites de mémoire
-        if (interactable != null)
-        {
-            interactable.selectEntered.RemoveListener(OnSelectEntered);
-        }
-    }
-
-    // Fonction appelée lorsqu'un utilisateur sélectionne l'objet
-    private void OnSelectEntered(SelectEnterEventArgs args)
-    {
-        SetCubeYToZero();
-    }
-
-    // Met à jour la position Y à 0
-    private void SetCubeYToZero()
-    {
-        Vector3 newPosition = transform.position;
-        newPosition.y = 0.3f;
+        // Déplace l'objet à la nouvelle position
         transform.position = newPosition;
+    }
 
-        Debug.Log("Position Y du cube définie à 0.");
+    private void OnDeselect(SelectExitEventArgs args)
+    {
+        // Restaure la position originale
+        transform.position = originalPosition;
+    }
+
+    void Update()
+    {
+        Debug.Log(transform.position);
     }
 }
