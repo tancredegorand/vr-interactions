@@ -10509,7 +10509,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2163811983567317276}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1235908592
+--- !u!114 &1235908596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10521,6 +10521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e93d3cdec1624a6f94195ed49e27a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  axeRigidbody: {fileID: 0}
+  isTouchingTarget: 0
 --- !u!4 &1236282484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4557757265253404, guid: 5c9211eb71cff4f4996a21d92317f601,
@@ -16277,6 +16279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900862373}
   - component: {fileID: 1900862374}
+  - component: {fileID: 1900862375}
   m_Layer: 0
   m_Name: empty
   m_TagString: Blade
@@ -16320,6 +16323,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.026176453, y: 0.26135826, z: 0.08564758}
   m_Center: {x: 0.0021781921, y: 0.2559824, z: 0.19700623}
+--- !u!114 &1900862375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900862372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19eb78aedf2504e38afa5f1047f4c2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1902255472 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1069567032315564, guid: bdf8e7438a7816543998181bd3067573,
@@ -18500,7 +18515,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 707320147670472855, guid: ffe2bfde44e764ba68310111d2564db5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1235908592}
+      addedObject: {fileID: 1235908596}
   m_SourcePrefab: {fileID: 100100000, guid: ffe2bfde44e764ba68310111d2564db5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
